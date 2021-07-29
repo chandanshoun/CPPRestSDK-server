@@ -1,0 +1,11 @@
+version: '3'
+services:
+    rest:
+        image: 'rest/updated-server'
+        restart: always
+        command: sh -c 'make clean && make && make Run'
+        ports:
+            - "39249:35248"
+        volumes:
+            - .:/home/app
+          
